@@ -12,7 +12,7 @@ namespace Protozoo.Ui.Web
         protected override void OnPreInit(EventArgs e)
         {
             base.OnPreInit(e);
-            _viewController = PresenterLocator.GetPresenter(this);   
+            _viewController = PresenterLocator.Resolve(this);   
         }
 
         protected override void OnInit(EventArgs e)

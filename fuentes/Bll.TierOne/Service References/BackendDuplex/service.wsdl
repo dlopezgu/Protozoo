@@ -237,7 +237,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:1374/BackendDuplex.svc</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>d707889@admon-cfnavarra.es</Upn>
+          <Upn>est05465\David</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

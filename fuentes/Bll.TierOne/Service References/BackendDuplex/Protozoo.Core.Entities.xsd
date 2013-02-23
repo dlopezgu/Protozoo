@@ -4,9 +4,18 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:EntityStatus" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Entity" nillable="true" type="tns:Entity" />
+  <xs:simpleType name="EntityStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Clean" />
+      <xs:enumeration value="Changed" />
+      <xs:enumeration value="Deleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntityStatus" nillable="true" type="tns:EntityStatus" />
   <xs:complexType name="ArrayOfEntity">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Entity" nillable="true" type="tns:Entity" />

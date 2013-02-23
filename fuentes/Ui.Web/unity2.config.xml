@@ -1,0 +1,14 @@
+﻿<unitySection2>
+  <typeAliases>
+    <typeAlias alias="IBusiness" type="Protozoo.Core.IBusiness, Protozoo.Core" />
+    <typeAlias alias="Remote" type="Protozoo.Core.Tier1.BusinessFront, Protozoo.Core.Tier1"/>
+    <typeAlias alias="Local" type="Protozoo.Core.Tier2.BusinessLayer2, Protozoo.Core.Tier2"/>
+  </typeAliases>
+  <container>
+    <types>
+      <type type="IBusiness" mapTo="Remote" >
+        <lifetime type="singleton" />
+      </type>
+    </types>
+  </container>
+</unitySection2>
