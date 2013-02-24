@@ -1,6 +1,23 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Frontend", "01. Frontend", "{C4F19337-C200-4239-9D05-CBD1B9D9F906}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Backend", "02. Backend", "{7B6382BA-0205-4675-91FF-E7E2F1A89AC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Core", "00. Core", "{A16F92ED-9434-480F-B3B0-6A22AB32C5FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{2D39BE0A-CAFA-40E5-B22E-5E0059522B17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{B7AB8EEF-043C-486C-81B5-4D640037DDE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99. Test", "99. Test", "{E4E9519B-BD2D-4873-A576-A00416C75495}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{94F44A6D-AAE2-46A0-9885-E57409E6CD54}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Microsoft.Practices.Unity.Configuration.dll = lib\Microsoft.Practices.Unity.Configuration.dll
+		lib\Microsoft.Practices.Unity.dll = lib\Microsoft.Practices.Unity.dll
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Ui.Web", "fuentes\Ui.Web\Protozoo.Ui.Web.csproj", "{81DFD3E4-B325-4290-B83B-4F503D555CE4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C5AF29A4-A311-425B-B735-0594EDA31C42} = {C5AF29A4-A311-425B-B735-0594EDA31C42}
@@ -10,12 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Core", "fuentes\Bl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Backend", "fuentes\Backend\Protozoo.Backend.csproj", "{C5AF29A4-A311-425B-B735-0594EDA31C42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Core.Tier1", "fuentes\Bll.TierOne\Protozoo.Core.Tier1.csproj", "{956AE0E3-233B-407A-AC3A-C877569EA43D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Bll.Tier1", "fuentes\Bll.TierOne\Protozoo.Bll.Tier1.csproj", "{956AE0E3-233B-407A-AC3A-C877569EA43D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C5AF29A4-A311-425B-B735-0594EDA31C42} = {C5AF29A4-A311-425B-B735-0594EDA31C42}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Core.Tier2", "fuentes\Bll.TierTwo\Protozoo.Core.Tier2.csproj", "{F4D0B8C4-E89C-4B8B-9AEB-F9633292B09F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Bll.Tier2", "fuentes\Bll.TierTwo\Protozoo.Bll.Tier2.csproj", "{F4D0B8C4-E89C-4B8B-9AEB-F9633292B09F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Ui.Presentadores", "fuentes\Gn.Ui.Presentadores\Protozoo.Ui.Presentadores.csproj", "{46170CE6-DF69-49AA-87F7-5603499B1E6E}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -24,9 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Ui.Presentadores",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Unity", "fuentes\Protozoo.Unity\Protozoo.Unity.csproj", "{502881BC-1E6C-4BDB-A5B8-D787BC8DF05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Dal", "fuentes\Protozoo.Dal\Protozoo.Dal.csproj", "{7DA25775-884F-4A4B-B51C-ADC4FF0395EC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Test", "fuentes\Protozoo.Test\Protozoo.Test.csproj", "{80C9590B-B168-4ED6-9547-449A7992375D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protozoo.Desktop", "Fuentes\Protozoo.Desktop\Protozoo.Desktop.csproj", "{68603B97-6BA8-4034-AF6E-77E62F405D7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,16 +77,24 @@ Global
 		{502881BC-1E6C-4BDB-A5B8-D787BC8DF05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{502881BC-1E6C-4BDB-A5B8-D787BC8DF05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{502881BC-1E6C-4BDB-A5B8-D787BC8DF05A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7DA25775-884F-4A4B-B51C-ADC4FF0395EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DA25775-884F-4A4B-B51C-ADC4FF0395EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DA25775-884F-4A4B-B51C-ADC4FF0395EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DA25775-884F-4A4B-B51C-ADC4FF0395EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80C9590B-B168-4ED6-9547-449A7992375D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80C9590B-B168-4ED6-9547-449A7992375D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80C9590B-B168-4ED6-9547-449A7992375D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80C9590B-B168-4ED6-9547-449A7992375D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68603B97-6BA8-4034-AF6E-77E62F405D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68603B97-6BA8-4034-AF6E-77E62F405D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68603B97-6BA8-4034-AF6E-77E62F405D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68603B97-6BA8-4034-AF6E-77E62F405D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D39BE0A-CAFA-40E5-B22E-5E0059522B17} = {C4F19337-C200-4239-9D05-CBD1B9D9F906}
+		{B7AB8EEF-043C-486C-81B5-4D640037DDE8} = {C4F19337-C200-4239-9D05-CBD1B9D9F906}
+		{956AE0E3-233B-407A-AC3A-C877569EA43D} = {C4F19337-C200-4239-9D05-CBD1B9D9F906}
+		{46170CE6-DF69-49AA-87F7-5603499B1E6E} = {C4F19337-C200-4239-9D05-CBD1B9D9F906}
+		{C5AF29A4-A311-425B-B735-0594EDA31C42} = {7B6382BA-0205-4675-91FF-E7E2F1A89AC1}
+		{F4D0B8C4-E89C-4B8B-9AEB-F9633292B09F} = {7B6382BA-0205-4675-91FF-E7E2F1A89AC1}
+		{99F69F1B-E06C-4CA5-B137-D96CB88DCE4F} = {A16F92ED-9434-480F-B3B0-6A22AB32C5FC}
+		{502881BC-1E6C-4BDB-A5B8-D787BC8DF05A} = {A16F92ED-9434-480F-B3B0-6A22AB32C5FC}
+		{81DFD3E4-B325-4290-B83B-4F503D555CE4} = {2D39BE0A-CAFA-40E5-B22E-5E0059522B17}
+		{68603B97-6BA8-4034-AF6E-77E62F405D7F} = {B7AB8EEF-043C-486C-81B5-4D640037DDE8}
 	EndGlobalSection
 EndGlobal

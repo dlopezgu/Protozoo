@@ -7,7 +7,7 @@
     <title></title>
     <script language="javascript" type="text/javascript" src="/js/jquery-1.7.2.min.js" ></script>
     <script language="javascript" type="text/javascript" src="/js/jquery-ui-1.8.22.custom.min.js" ></script>
-    <style>
+    <style type="text/css">
         body 
         {
             font-family: Arial; 
@@ -20,7 +20,7 @@
         input[type="text"]:focus {
 		-webkit-box-shadow: 0px 0px 5px #007eff;
 		-moz-box-shadow: 0px 0px 5px #007eff;
-		box-shadow: 0px 0px 5px #007eff;
+		/*box-shadow: 0px 0px 5px #007eff;*/
 	}
         
         input[type="text"] 
@@ -114,7 +114,7 @@
         
         #userCard   
         {
-            width: 30%;
+            width: 25em;
             background:  url('img/user02-50x50.png') no-repeat 0.75em 1.5em;
         }
         #request-result-box 
@@ -131,27 +131,35 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <asp:ScriptManager runat="server" ID="sc01"></asp:ScriptManager>
+
+
+   <form runat="server">
+   <asp:ScriptManager runat="server" ID="sc01"></asp:ScriptManager>
     <div>
-        <asp:TextBox ID="ctlDoContext" runat="server" Text="1" />        
-        <asp:Button id="ctlDo" runat="server" Text="Ejecutar operación"/>
         
-        <div class="card" id="request-result-box"> 
-            <div class="card-title">Resultado de la operación</div>
-            <div ID="ctlRes" runat="server" ></div>
-            <asp:Repeater ID="msgList" runat="server" >
-                <ItemTemplate>
-                   <div><%#DataBinder.GetDataItem(Container) %></div>
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
+       <asp:TextBox ID="ctlDoContext" runat="server" Text="1" />        
+        <asp:Button id="ctlDo" runat="server" Text="Ejecutar operación" CommandName="Find"/>
+        <asp:FormView ID="view1" runat="server">
+        <ItemTemplate>        
         <div class="card"id="userCard">        
             <label>Nombre</label>
-            <asp:Label ID="ctlUserName" runat="server" />
+            <asp:Label ID="ctlUserName" runat="server" ><%# Eval("Account") %></asp:Label>
             <br />
             <label>Cuenta</label>
-            <asp:Label ID="ctlUserAccount" runat="server" />    
+            <asp:Label ID="ctlUserAccount" runat="server" ><%# DataBinder.Eval(Container.DataItem,"Name") %></asp:Label>    
+        </div>            
+        </ItemTemplate>
+        </asp:FormView>
+        <div class="card" id="request-result-box">             
+            <asp:Repeater ID="msgList" runat="server" > 
+            <HeaderTemplate>
+                <div class="card-title">Resultado de la operación</div>
+                <div ID="ctlRes" runat="server" ></div>
+            </HeaderTemplate>           
+                <ItemTemplate>
+                   <div><%# Container.DataItem %></div>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </div>
     </form>

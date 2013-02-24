@@ -1,29 +1,32 @@
 ﻿using Microsoft.Practices.Unity;
+using Protozoo.Bll.Tier1;
+using Protozoo.Bll.Tier2;
 using Protozoo.Core;
-using Protozoo.Core.Tier1;
-using Protozoo.Core.Tier2;
-using Protozoo.Ui.Presentadores.Views;
 
 namespace Protozoo.Ui.Presentadores
 {
-    public class PresenterLocator
+    public class ControllerLocator
     {
         private static IUnityContainer _container = new UnityContainer();
 
         private const string _RESOLVE_IMPLEMENTATION_ = "Remote-duplex";
 
-        static PresenterLocator()
-        {
+        static ControllerLocator()
+        {            
             _container.RegisterType<IBusiness, BusinessFront>("Remote");
             _container.RegisterType<IBusiness, BusinessFrontDuplex>("Remote-duplex");
             _container.RegisterType<IBusiness, BusinessLayer2>("Local");
-            _container.RegisterType<Presenter>();
+            _container.RegisterType<ViewModel>();
         }
 
-        public static Presenter Resolve(IView view)
+        public static ViewModel GetController()
         {
-            Presenter instance = _container.Resolve<Presenter>(new ParameterOverride("model",new ResolvedParameter<IBusiness>(_RESOLVE_IMPLEMENTATION_)));
-            instance.View = view;
+            ViewModel instance = _container.Resolve<ViewModel>
+                (
+                    new ResolverOverride[]{
+                    new ParameterOverride("model",new ResolvedParameter<IBusiness>(_RESOLVE_IMPLEMENTATION_))                    
+                    }                 
+                );            
             return instance;
         }
     }

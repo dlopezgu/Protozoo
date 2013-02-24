@@ -2,9 +2,9 @@
 using System.Linq;
 using Protozoo.Core;
 using Protozoo.Core.Entities;
-using Protozoo.Core.Tier1.Backend;
+using Bll.Tier1.Backend;
 
-namespace Protozoo.Core.Tier1
+namespace Protozoo.Bll.Tier1
 {
     /// <summary>
     /// Implementación de la interfaz de negocio para la capa de Servidor de aplicaciones Web.

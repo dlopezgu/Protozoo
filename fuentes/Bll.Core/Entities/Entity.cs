@@ -1,23 +1,16 @@
 ﻿namespace Protozoo.Core.Entities
 {
-    public enum EntityStatus
+    public interface IEntity
     { 
-        Clean = 0,
-        Changed = 1,
-        Deleted = 2
+        string Name { get; set; }
+        
+        string Account { get; set; }        
     }
 
-    public class Entity 
+    public class Entity: IEntity
     {
         public Entity() { }
 
-        /// <summary>
-        /// Indica si ha habido modificaciones sobre la entidad:
-        /// Borrada, modificada, sin modificaciones.
-        /// </summary>
-        public EntityStatus Status { get; set; }
-
-        #region Elementos de una entidad concreta
         public Entity(string name, string account)
         {
             this.Name = name;
@@ -26,8 +19,7 @@
 
         public string Name { get; set; }
         
-        public string Account { get; set; }
-        #endregion
+        public string Account { get; set; }        
     }
 }
 

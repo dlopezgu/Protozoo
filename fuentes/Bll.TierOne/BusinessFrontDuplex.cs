@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.ServiceModel;
+using Bll.Tier1.BackendDuplex;
+using Protozoo.Core;
 using Protozoo.Core.Entities;
-using Protozoo.Core.Tier1.BackendDuplex;
 
-namespace Protozoo.Core.Tier1
+namespace Protozoo.Bll.Tier1
 {
     [CallbackBehavior(UseSynchronizationContext = false, ConcurrencyMode = ConcurrencyMode.Single)]
     public class BusinessFrontDuplex : IBusiness, IBackendDuplexCallback, IDisposable

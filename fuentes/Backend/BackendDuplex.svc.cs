@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ServiceModel;
+using Protozoo.Bll.Tier2;
 using Protozoo.Core;
 using Protozoo.Core.Entities;
-using Protozoo.Core.Tier2;
 
 namespace Protozoo.Backend
 {
@@ -15,11 +15,11 @@ namespace Protozoo.Backend
             IBusiness domainObject = new BusinessLayer2();
             BackendDTO<Entity, Exception> serviceMessage = new BackendDTO<Entity, Exception>();
             // Captura el evento de negocio y lo incluye en el mensaje del servicio
-            domainObject.SomethingIsHappening += msg => 
+            domainObject.SomethingIsHappening += message => 
                 {
-                    BackendDTO<Entity, Exception> message = new BackendDTO<Entity, Exception>();
-                    message.Messages.Add(new Message("Something happened <" + msg + "> " + DateTime.Now.ToString(), "Event"));
-                    Callback.Notify(message);
+                    BackendDTO<Entity, Exception> backendResult = new BackendDTO<Entity, Exception>();
+                    backendResult.Messages.Add(new Message(message + " " + DateTime.Now.ToString(), "Event"));
+                    Callback.Notify(backendResult);
                 };
             try
             {   // Llamada a negocio            
